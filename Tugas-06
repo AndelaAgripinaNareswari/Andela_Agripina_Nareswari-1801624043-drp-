@@ -1,0 +1,177 @@
+from datetime import datetime
+import time
+
+# Daftar bahan yang tersedia di rumah
+bahan_tersedia = ["telur", "ikan", "nugget"]
+
+# Fungsi garis pembatas
+def garis():
+    print("=" * 50)
+
+# Fungsi sarapan
+def aktivitas_sarapan():
+    garis()
+    print("AKTIVITAS SARAPAN")
+    menu = input("Masukkan menu sarapan yang diinginkan: ").lower()
+
+    if menu in bahan_tersedia:
+        print(f"\nMenu {menu} tersedia.")
+        print("Sedang memasak...")
+        time.sleep(2)
+        print(f"{menu.capitalize()} berhasil dimasak.")
+        print("Selamat sarapan!\n")
+    else:
+        print(f"\nBahan untuk {menu} tidak tersedia.")
+        print("Silakan membeli bahan terlebih dahulu.")
+        print("Pergi ke minimarket...")
+        time.sleep(2)
+        print(f"Bahan {menu} berhasil dibeli.")
+        print(f"{menu.capitalize()} siap dimasak.\n")
+
+# Fungsi kerja
+def aktivitas_kerja():
+    garis()
+    print("AKTIVITAS BERANGKAT KERJA")
+
+    # Jadwal masuk kerja
+    jam_masuk = datetime.now().replace(hour=8, minute=0, second=0, microsecond=0)
+
+    # Waktu sekarang
+    sekarang = datetime.now()
+
+    print("Waktu sekarang :", sekarang.strftime("%H:%M:%S"))
+    print("Jadwal masuk   : 08:00:00")
+
+    # Cek keterlambatan
+    if sekarang > jam_masuk:
+        selisih = sekarang - jam_masuk
+        menit_terlambat = selisih.seconds // 60
+
+        print("\nNOTIFIKASI:")
+        print(f"Anda terlambat kerja sekitar {menit_terlambat} menit!")
+    else:
+        selisih = jam_masuk - sekarang
+        menit_sisa = selisih.seconds // 60
+
+        print("\nNOTIFIKASI:")
+        print(f"Anda belum terlambat.")
+        print(f"Sisa waktu menuju jam kerja: {menit_sisa} menit.")
+
+    print()
+
+# Main program
+def main():
+    while True:
+        garis()
+        print("APLIKASI MANAJEMEN AKTIVITAS")
+        garis()
+        print("1. Sarapan")
+        print("2. Berangkat Kerja")
+        print("3. Keluar")
+
+        pilihan = input("Pilih aktivitas (1/2/3): ")
+
+        if pilihan == "1":
+            aktivitas_sarapan()
+
+        elif pilihan == "2":
+            aktivitas_kerja()
+
+        elif pilihan == "3":
+            print("\nTerima kasih telah menggunakan aplikasi.")
+            break
+
+        else:
+            print("\nPilihan tidak valid!")
+
+# Menjalankan program
+if __name__ == "__main__":
+    main()
+from datetime import datetime
+import time
+
+# Daftar bahan yang tersedia di rumah
+bahan_tersedia = ["telur", "ikan", "nugget"]
+
+# Fungsi garis pembatas
+def garis():
+    print("=" * 50)
+
+# Fungsi sarapan
+def aktivitas_sarapan():
+    garis()
+    print("AKTIVITAS SARAPAN")
+    menu = input("Masukkan menu sarapan yang diinginkan: ").lower()
+
+    if menu in bahan_tersedia:
+        print(f"\nMenu {menu} tersedia.")
+        print("Sedang memasak...")
+        time.sleep(2)
+        print(f"{menu.capitalize()} berhasil dimasak.")
+        print("Selamat sarapan!\n")
+    else:
+        print(f"\nBahan untuk {menu} tidak tersedia.")
+        print("Silakan membeli bahan terlebih dahulu.")
+        print("Pergi ke minimarket...")
+        time.sleep(2)
+        print(f"Bahan {menu} berhasil dibeli.")
+        print(f"{menu.capitalize()} siap dimasak.\n")
+
+# Fungsi kerja
+def aktivitas_kerja():
+    garis()
+    print("AKTIVITAS BERANGKAT KERJA")
+
+    # Jadwal masuk kerja
+    jam_masuk = datetime.now().replace(hour=8, minute=0, second=0, microsecond=0)
+
+    # Waktu sekarang
+    sekarang = datetime.now()
+
+    print("Waktu sekarang :", sekarang.strftime("%H:%M:%S"))
+    print("Jadwal masuk   : 08:00:00")
+
+    # Cek keterlambatan
+    if sekarang > jam_masuk:
+        selisih = sekarang - jam_masuk
+        menit_terlambat = selisih.seconds // 60
+
+        print("\nNOTIFIKASI:")
+        print(f"Anda terlambat kerja sekitar {menit_terlambat} menit!")
+    else:
+        selisih = jam_masuk - sekarang
+        menit_sisa = selisih.seconds // 60
+
+        print("\nNOTIFIKASI:")
+        print(f"Anda belum terlambat.")
+        print(f"Sisa waktu menuju jam kerja: {menit_sisa} menit.")
+
+    print()
+
+# Main program
+def main():
+    while True:
+        garis()
+        print("APLIKASI MANAJEMEN AKTIVITAS")
+        garis()
+        print("1. Sarapan")
+        print("2. Berangkat Kerja")
+        print("3. Keluar")
+
+        pilihan = input("Pilih aktivitas (1/2/3): ")
+
+        if pilihan == "1":
+            aktivitas_sarapan()
+
+        elif pilihan == "2":
+            aktivitas_kerja()
+
+        elif pilihan == "3":
+            print("\nTerima kasih telah menggunakan aplikasi.")
+            break
+
+        else:
+            print("\nPilihan tidak valid!")
+
+# Menjalankan program
+main()
